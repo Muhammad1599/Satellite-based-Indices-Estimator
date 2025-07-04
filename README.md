@@ -187,7 +187,7 @@ Value Ranges:
 - 0.02-0.04: Low chlorophyll content
 - < 0.02: Very low chlorophyll or non-vegetated
 
-## Detailed Index Equations and References
+## Detailed Index Equations (see References in end)
 
 ### 1. NDWI (Normalized Difference Water Index)
 ```
@@ -196,12 +196,6 @@ NDWI = (GREEN - NIR) / (GREEN + NIR)
 Where:
 - GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
 - NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
-
-**References:**
-- Original NDWI formulation:
-  - McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432.
-- Sentinel-2 band adaptation and validation:
-  - Du, Y., Zhang, Y., Ling, F., Wang, Q., Li, W., & Li, X. (2016). Water bodies' mapping from Sentinel-2 imagery with modified normalized difference water index at 10-m spatial resolution produced by sharpening the SWIR band. Remote Sensing, 8(4), 354.
 
 ### 2. BSI (Bare Soil Index)
 ```
@@ -213,12 +207,6 @@ Where:
 - NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
 - BLUE = Blue reflectance (Sentinel-2 Band 2: 490 nm)
 
-**References:**
-- Original BSI formulation and validation:
-  - Rikimaru, A., Roy, P. S., & Miyatake, S. (2002). Tropical forest cover density mapping. Tropical Ecology, 43(1), 39-47.
-- Sentinel-2 adaptation and validation:
-  - Diek, S., Fornallaz, F., Schaepman, M., & De Jong, R. (2017). Barest Pixel Composite for agricultural areas using Landsat time series. Remote Sensing, 9(12), 1245.
-
 ### 3. SAVI (Soil Adjusted Vegetation Index)
 ```
 SAVI = ((NIR - RED) * (1 + L)) / (NIR + RED + L)
@@ -228,12 +216,6 @@ Where:
 - RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
 - L = Soil brightness correction factor (typically 0.5)
 
-**References:**
-- Original SAVI formulation:
-  - Huete, A.R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309.
-- Sentinel-2 validation and application:
-  - Delegido, J., Verrelst, J., Alonso, L., & Moreno, J. (2011). Evaluation of Sentinel-2 red-edge bands for empirical estimation of green LAI and chlorophyll content. Sensors, 11(7), 7063-7081.
-
 ### 4. NDRE (Normalized Difference Red Edge)
 ```
 NDRE = (NIR - REDEDGE) / (NIR + REDEDGE)
@@ -241,12 +223,6 @@ NDRE = (NIR - REDEDGE) / (NIR + REDEDGE)
 Where:
 - NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
 - REDEDGE = Red-edge reflectance (Sentinel-2 Band 5: 705 nm)
-
-**References:**
-- Original NDRE development and validation:
-  - Gitelson, A., & Merzlyak, M. N. (1994). Spectral reflectance changes associated with autumn senescence of Aesculus hippocastanum L. and Acer platanoides L. leaves. Journal of Plant Physiology, 143(3), 286-292.
-- Sentinel-2 red-edge bands validation:
-  - Clevers, J. G., & Gitelson, A. A. (2013). Remote estimation of crop and grass chlorophyll and nitrogen content using red-edge bands on Sentinel-2 and -3. International Journal of Applied Earth Observation and Geoinformation, 23, 344-351.
 
 ### 5. MCARI (Modified Chlorophyll Absorption Ratio Index)
 ```
@@ -256,80 +232,6 @@ Where:
 - NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
 - RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
 - GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
-
-**References:**
-- Original MCARI development:
-  - Daughtry, C. S. T., Walthall, C. L., Kim, M. S., De Colstoun, E. B., & McMurtrey Iii, J. E. (2000). Estimating corn leaf chlorophyll concentration from leaf and canopy reflectance. Remote Sensing of Environment, 74(2), 229-239.
-- Sentinel-2 adaptation and validation:
-  - Clevers, J. G., & Kooistra, L. (2012). Using hyperspectral remote sensing data for retrieving canopy chlorophyll and nitrogen content. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 5(2), 574-583.
-
-### Additional References for Sentinel-2 Band Selection
-- ESA Sentinel-2 User Handbook:
-  - European Space Agency. (2015). Sentinel-2 User Handbook. ESA Standard Document, 1, 1-64.
-- Sentinel-2 Band Characteristics and Applications:
-  - Drusch, M., Del Bello, U., Carlier, S., Colin, O., Fernandez, V., Gascon, F., ... & Bargellini, P. (2012). Sentinel-2: ESA's optical high-resolution mission for GMES operational services. Remote Sensing of Environment, 120, 25-36.
-
-## Additional References
-
-1. Sentinel-2 MSI User Guide - European Space Agency
-2. Google Earth Engine Documentation
-3. Scientific papers on MCARI applications in agriculture
-4. Sentinel-2 User Handbook
-5. Google Earth Engine Documentation
-
-## Applications and Analysis Capabilities
-
-### Agricultural Applications
-
-| Category | Application | Details |
-|----------|------------|----------|
-| **Crop Health Monitoring** | Temporal Analysis | • Track seasonal crop development patterns<br>• Early detection of crop stress<br>• Yield prediction based on vegetation indices<br>• Growth stage monitoring and phenology mapping |
-| **Stress Detection** | Water Stress Analysis | • NDWI time series for irrigation management<br>• Early drought detection<br>• Soil moisture variation mapping<br>• Irrigation efficiency assessment |
-| | Nutrient Stress Detection | • NDRE patterns for nitrogen deficiency<br>• Chlorophyll content estimation (MCARI)<br>• Fertilizer application optimization<br>• Nutrient uptake efficiency monitoring |
-| | Environmental Stress | • Heat stress detection<br>• Pest and disease vulnerability<br>• Weather impact analysis<br>• Microclimate influence evaluation |
-| **Soil Analysis** | Characteristics Mapping | • BSI for bare soil detection<br>• Soil erosion risk assessment<br>• Tillage practice evaluation<br>• Post-harvest field condition analysis |
-| | Health Assessment | • Organic matter content estimation<br>• Soil degradation monitoring<br>• Conservation practice effectiveness<br>• Soil moisture retention patterns |
-
-### Land Cover Analysis
-
-| Category | Application | Details |
-|----------|------------|----------|
-| **Vegetation Classification** | Cover Type Identification | • Crop type classification<br>• Natural vegetation mapping<br>• Invasive species detection<br>• Biodiversity assessment |
-| | Temporal Pattern Analysis | • Seasonal vegetation changes<br>• Land use change detection<br>• Ecosystem health monitoring<br>• Habitat fragmentation analysis |
-| **Water Resource Management** | Water Body Mapping | • Surface water extent monitoring<br>• Wetland delineation<br>• Irrigation pond mapping<br>• Flood risk assessment |
-
-### Advanced Analysis Techniques
-
-| Technique | Details |
-|-----------|----------|
-| **Multi-Index Integration** | • Combine multiple indices for comprehensive analysis<br>• Create custom index combinations<br>• Develop integrated stress indicators<br>• Pattern recognition across indices |
-| **Time Series Analysis** | • Growth cycle characterization<br>• Anomaly detection<br>• Trend analysis and forecasting<br>• Season-to-season comparisons |
-| **Change Detection** | • Gradual changes in land use<br>• Sudden changes due to disturbances<br>• Recovery monitoring<br>• Long-term transformation analysis |
-
-## Future Developments
-
-### Planned Index Additions
-
-| Category | New Indices |
-|----------|-------------|
-| **Vegetation-Specific** | • Enhanced Vegetation Index (EVI)<br>• Green NDVI (GNDVI)<br>• Transformed Chlorophyll Absorption Ratio Index (TCARI)<br>• Modified Triangular Vegetation Index (MTVI) |
-| **Soil-Specific** | • Normalized Difference Tillage Index (NDTI)<br>• Short-Wave Infrared Soil Moisture Index (SIMI)<br>• Modified SAVI (MSAVI)<br>• Soil Composition Index (SCI) |
-| **Stress-Specific** | • Temperature Condition Index (TCI)<br>• Vegetation Condition Index (VCI)<br>• Normalized Difference Drought Index (NDDI)<br>• Crop Water Stress Index (CWSI) |
-
-### Feature Enhancements
-
-| Category | Planned Features |
-|----------|-----------------|
-| **Advanced Analytics** | • Machine learning integration<br>• Automated stress classification<br>• Yield prediction models<br>• Climate data integration |
-| **Visualization** | • Interactive time series plots<br>• 3D terrain visualization<br>• Mobile-friendly interfaces<br>• Real-time monitoring dashboards |
-| **Data Integration** | • Weather data integration<br>• Soil test correlation<br>• Yield data incorporation<br>• IoT sensor data fusion |
-| **Analysis Tools** | • Batch processing capabilities<br>• Custom index builder<br>• Automated report generation<br>• Statistical analysis package |
-
-### Community Contributions
-| Area | Details |
-|------|----------|
-| **Development** | • New index implementations<br>• Analysis tool development<br>• Documentation improvements |
-| **Validation** | • Use case examples<br>• Validation studies<br>• Integration with other platforms |
 
 
 ## Installation
@@ -550,7 +452,45 @@ This visualization demonstrates the tool's ability to:
 | **Development** | • New index implementations<br>• Analysis tool development<br>• Documentation improvements |
 | **Validation** | • Use case examples<br>• Validation studies<br>• Integration with other platforms |
 
+**References:**
+- Original MCARI development:
+  - Daughtry, C. S. T., Walthall, C. L., Kim, M. S., De Colstoun, E. B., & McMurtrey Iii, J. E. (2000). Estimating corn leaf chlorophyll concentration from leaf and canopy reflectance. Remote Sensing of Environment, 74(2), 229-239.
+- Sentinel-2 adaptation and validation:
+  - Clevers, J. G., & Kooistra, L. (2012). Using hyperspectral remote sensing data for retrieving canopy chlorophyll and nitrogen content. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 5(2), 574-583.
 
+- Original NDRE development and validation:
+  - Gitelson, A., & Merzlyak, M. N. (1994). Spectral reflectance changes associated with autumn senescence of Aesculus hippocastanum L. and Acer platanoides L. leaves. Journal of Plant Physiology, 143(3), 286-292.
+- Sentinel-2 red-edge bands validation:
+  - Clevers, J. G., & Gitelson, A. A. (2013). Remote estimation of crop and grass chlorophyll and nitrogen content using red-edge bands on Sentinel-2 and -3. International Journal of Applied Earth Observation and Geoinformation, 23, 344-351.
+
+- Original SAVI formulation:
+  - Huete, A.R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309.
+- Sentinel-2 validation and application:
+  - Delegido, J., Verrelst, J., Alonso, L., & Moreno, J. (2011). Evaluation of Sentinel-2 red-edge bands for empirical estimation of green LAI and chlorophyll content. Sensors, 11(7), 7063-7081.
+
+- Original BSI formulation and validation:
+  - Rikimaru, A., Roy, P. S., & Miyatake, S. (2002). Tropical forest cover density mapping. Tropical Ecology, 43(1), 39-47.
+- Sentinel-2 adaptation and validation:
+  - Diek, S., Fornallaz, F., Schaepman, M., & De Jong, R. (2017). Barest Pixel Composite for agricultural areas using Landsat time series. Remote Sensing, 9(12), 1245.
+
+- Original NDWI formulation:
+  - McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432.
+- Sentinel-2 band adaptation and validation:
+  - Du, Y., Zhang, Y., Ling, F., Wang, Q., Li, W., & Li, X. (2016). Water bodies' mapping from Sentinel-2 imagery with modified normalized difference water index at 10-m spatial resolution produced by sharpening the SWIR band. Remote Sensing, 8(4), 354.
+
+### Additional References for Sentinel-2 Band Selection
+- ESA Sentinel-2 User Handbook:
+  - European Space Agency. (2015). Sentinel-2 User Handbook. ESA Standard Document, 1, 1-64.
+- Sentinel-2 Band Characteristics and Applications:
+  - Drusch, M., Del Bello, U., Carlier, S., Colin, O., Fernandez, V., Gascon, F., ... & Bargellini, P. (2012). Sentinel-2: ESA's optical high-resolution mission for GMES operational services. Remote Sensing of Environment, 120, 25-36.
+
+## Additional References
+
+1. Sentinel-2 MSI User Guide - European Space Agency
+2. Google Earth Engine Documentation
+3. Scientific papers on MCARI applications in agriculture
+4. Sentinel-2 User Handbook
+5. Google Earth Engine Documentation
 
 ## License
 

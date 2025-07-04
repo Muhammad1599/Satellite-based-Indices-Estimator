@@ -2,6 +2,66 @@
 
 A comprehensive suite of tools for calculating various satellite-based indices using Google Earth Engine and Sentinel-2 satellite imagery. This suite includes calculators for NDWI, BSI, SAVI, NDRE, and MCARI indices.
 
+## Table of Contents
+- [Developer](#developer)
+- [Overview](#overview)
+- [Features Common to All Calculators](#features-common-to-all-calculators)
+- [Sentinel-2 Data Specifications](#sentinel-2-data-specifications)
+  - [Temporal Resolution](#temporal-resolution)
+  - [Spatial Resolution](#spatial-resolution)
+  - [Coverage](#coverage)
+- [Index Formulas and Interpretation](#index-formulas-and-interpretation)
+  - [NDWI](#1-ndwi-normalized-difference-water-index)
+  - [BSI](#2-bsi-bare-soil-index)
+  - [SAVI](#3-savi-soil-adjusted-vegetation-index)
+  - [NDRE](#4-ndre-normalized-difference-red-edge)
+  - [MCARI](#5-mcari-modified-chlorophyll-absorption-ratio-index)
+- [Detailed Index Equations and References](#detailed-index-equations-and-references)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Configuration](#configuration)
+- [Output Structure](#output-structure)
+- [Advanced Features](#advanced-features)
+- [Sample Data](#sample-data)
+- [Processing Workflow and Example Results](#processing-workflow-and-example-results)
+- [References](#references)
+- [License](#license)
+- [Contributing](#contributing)
+
+## Repository Structure
+```
+satellite-indices-calculator-suite/
+├── README.md
+├── ndwi_timeseries_20250703_195557.png
+└── Satellite based Indices estimators/
+    ├── NDWI/
+    │   ├── ndwi_analysis.py
+    │   ├── config.json
+    │   ├── requirements.txt
+    │   └── README.md
+    ├── BSI/
+    │   ├── bsi_analysis.py
+    │   ├── config.json
+    │   ├── requirements.txt
+    │   └── README.md
+    ├── SAVI/
+    │   ├── savi_analysis.py
+    │   ├── config.json
+    │   ├── requirements.txt
+    │   └── README.md
+    ├── NDRE/
+    │   ├── ndre_analysis.py
+    │   ├── config.json
+    │   ├── requirements.txt
+    │   └── README.md
+    └── MCARI/
+        ├── mcari_analysis.py
+        ├── config.json
+        ├── requirements.txt
+        └── README.md
+```
+
 ## Developer
 **Muhammad Arslan**
 

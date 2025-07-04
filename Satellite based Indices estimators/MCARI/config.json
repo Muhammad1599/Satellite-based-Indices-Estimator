@@ -1,0 +1,7 @@
+{
+    "cloud_cover_threshold": 30,
+    "chunk_size_days": 15,
+    "scale_meters": 30,
+    "max_pixels": 1e9,
+    "output_directory": "output"
+} 

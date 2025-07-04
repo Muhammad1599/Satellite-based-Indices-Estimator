@@ -1,0 +1,21 @@
+{
+  "timestamp": "20250704_011951",
+  "start_date": "2023-04-01",
+  "end_date": "2023-09-30",
+  "config": {
+    "cloud_cover_threshold": 30,
+    "chunk_size_days": 15,
+    "scale_meters": 30,
+    "max_pixels": 1000000000.0,
+    "output_directory": "output",
+    "soil_brightness_factor": 0.5
+  },
+  "quality_issues": [
+    "Missing values detected in the data",
+    "Large temporal gaps detected (>30 days)"
+  ],
+  "total_observations": 18,
+  "interpolated_points": 83,
+  "mean_savi": 0.32859632439509473,
+  "mean_cloud_cover": 9.070269944444444
+}

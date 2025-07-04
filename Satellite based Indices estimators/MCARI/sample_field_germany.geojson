@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample Agricultural Field",
+        "country": "Germany",
+        "area_ha": 5.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [10.891647, 52.237328],
+          [10.893235, 52.237328],
+          [10.893235, 52.238591],
+          [10.891647, 52.238591],
+          [10.891647, 52.237328]
+        ]]
+      }
+    }
+  ]
+} 

@@ -281,144 +281,55 @@ Where:
 
 ### Agricultural Applications
 
-#### 1. Crop Health Monitoring
-- **Temporal Analysis**
-  - Track seasonal crop development patterns
-  - Early detection of crop stress
-  - Yield prediction based on vegetation indices trends
-  - Growth stage monitoring and phenology mapping
-
-#### 2. Stress Detection and Classification
-- **Water Stress Analysis**
-  - NDWI time series for irrigation management
-  - Early drought detection
-  - Soil moisture variation mapping
-  - Irrigation efficiency assessment
-
-- **Nutrient Stress Detection**
-  - NDRE patterns for nitrogen deficiency identification
-  - Chlorophyll content estimation using MCARI
-  - Fertilizer application optimization
-  - Nutrient uptake efficiency monitoring
-
-- **Environmental Stress Monitoring**
-  - Heat stress detection through index combinations
-  - Pest and disease vulnerability assessment
-  - Weather impact analysis
-  - Microclimate influence evaluation
-
-#### 3. Soil Analysis and Management
-- **Soil Characteristics Mapping**
-  - BSI for bare soil detection and monitoring
-  - Soil erosion risk assessment
-  - Tillage practice evaluation
-  - Post-harvest field condition analysis
-
-- **Soil Health Assessment**
-  - Organic matter content estimation
-  - Soil degradation monitoring
-  - Conservation practice effectiveness
-  - Soil moisture retention patterns
+| Category | Application | Details |
+|----------|------------|----------|
+| **Crop Health Monitoring** | Temporal Analysis | • Track seasonal crop development patterns<br>• Early detection of crop stress<br>• Yield prediction based on vegetation indices<br>• Growth stage monitoring and phenology mapping |
+| **Stress Detection** | Water Stress Analysis | • NDWI time series for irrigation management<br>• Early drought detection<br>• Soil moisture variation mapping<br>• Irrigation efficiency assessment |
+| | Nutrient Stress Detection | • NDRE patterns for nitrogen deficiency<br>• Chlorophyll content estimation (MCARI)<br>• Fertilizer application optimization<br>• Nutrient uptake efficiency monitoring |
+| | Environmental Stress | • Heat stress detection<br>• Pest and disease vulnerability<br>• Weather impact analysis<br>• Microclimate influence evaluation |
+| **Soil Analysis** | Characteristics Mapping | • BSI for bare soil detection<br>• Soil erosion risk assessment<br>• Tillage practice evaluation<br>• Post-harvest field condition analysis |
+| | Health Assessment | • Organic matter content estimation<br>• Soil degradation monitoring<br>• Conservation practice effectiveness<br>• Soil moisture retention patterns |
 
 ### Land Cover Analysis
 
-#### 1. Vegetation Classification
-- **Cover Type Identification**
-  - Crop type classification
-  - Natural vegetation mapping
-  - Invasive species detection
-  - Biodiversity assessment
-
-- **Temporal Pattern Analysis**
-  - Seasonal vegetation changes
-  - Land use change detection
-  - Ecosystem health monitoring
-  - Habitat fragmentation analysis
-
-#### 2. Water Resource Management
-- **Water Body Mapping**
-  - Surface water extent monitoring
-  - Wetland delineation
-  - Irrigation pond mapping
-  - Flood risk assessment
+| Category | Application | Details |
+|----------|------------|----------|
+| **Vegetation Classification** | Cover Type Identification | • Crop type classification<br>• Natural vegetation mapping<br>• Invasive species detection<br>• Biodiversity assessment |
+| | Temporal Pattern Analysis | • Seasonal vegetation changes<br>• Land use change detection<br>• Ecosystem health monitoring<br>• Habitat fragmentation analysis |
+| **Water Resource Management** | Water Body Mapping | • Surface water extent monitoring<br>• Wetland delineation<br>• Irrigation pond mapping<br>• Flood risk assessment |
 
 ### Advanced Analysis Techniques
 
-#### 1. Multi-Index Integration
-- Combine multiple indices for comprehensive analysis
-- Create custom index combinations for specific applications
-- Develop integrated stress indicators
-- Pattern recognition across different indices
-
-#### 2. Time Series Analysis
-- **Temporal Pattern Recognition**
-  - Growth cycle characterization
-  - Anomaly detection
-  - Trend analysis and forecasting
-  - Season-to-season comparisons
-
-- **Change Detection**
-  - Gradual changes in land use
-  - Sudden changes due to disturbances
-  - Recovery monitoring
-  - Long-term transformation analysis
+| Technique | Details |
+|-----------|----------|
+| **Multi-Index Integration** | • Combine multiple indices for comprehensive analysis<br>• Create custom index combinations<br>• Develop integrated stress indicators<br>• Pattern recognition across indices |
+| **Time Series Analysis** | • Growth cycle characterization<br>• Anomaly detection<br>• Trend analysis and forecasting<br>• Season-to-season comparisons |
+| **Change Detection** | • Gradual changes in land use<br>• Sudden changes due to disturbances<br>• Recovery monitoring<br>• Long-term transformation analysis |
 
 ## Future Developments
 
 ### Planned Index Additions
 
-#### 1. Vegetation-Specific Indices
-- Enhanced Vegetation Index (EVI)
-- Green Normalized Difference Vegetation Index (GNDVI)
-- Transformed Chlorophyll Absorption Ratio Index (TCARI)
-- Modified Triangular Vegetation Index (MTVI)
+| Category | New Indices |
+|----------|-------------|
+| **Vegetation-Specific** | • Enhanced Vegetation Index (EVI)<br>• Green NDVI (GNDVI)<br>• Transformed Chlorophyll Absorption Ratio Index (TCARI)<br>• Modified Triangular Vegetation Index (MTVI) |
+| **Soil-Specific** | • Normalized Difference Tillage Index (NDTI)<br>• Short-Wave Infrared Soil Moisture Index (SIMI)<br>• Modified SAVI (MSAVI)<br>• Soil Composition Index (SCI) |
+| **Stress-Specific** | • Temperature Condition Index (TCI)<br>• Vegetation Condition Index (VCI)<br>• Normalized Difference Drought Index (NDDI)<br>• Crop Water Stress Index (CWSI) |
 
-#### 2. Soil-Specific Indices
-- Normalized Difference Tillage Index (NDTI)
-- Short-Wave Infrared Soil Moisture Index (SIMI)
-- Modified Soil-Adjusted Vegetation Index (MSAVI)
-- Soil Composition Index (SCI)
+### Feature Enhancements
 
-#### 3. Stress-Specific Indices
-- Temperature Condition Index (TCI)
-- Vegetation Condition Index (VCI)
-- Normalized Difference Drought Index (NDDI)
-- Crop Water Stress Index (CWSI)
-
-### Planned Feature Enhancements
-
-#### 1. Advanced Analytics
-- Machine learning integration for pattern recognition
-- Automated stress classification
-- Yield prediction models
-- Climate data integration
-
-#### 2. Visualization Improvements
-- Interactive time series plots
-- 3D terrain visualization
-- Mobile-friendly interfaces
-- Real-time monitoring dashboards
-
-#### 3. Data Integration
-- Integration with weather data
-- Soil test correlation
-- Yield data incorporation
-- IoT sensor data fusion
-
-#### 4. Analysis Tools
-- Batch processing capabilities
-- Custom index builder
-- Automated report generation
-- Statistical analysis package
+| Category | Planned Features |
+|----------|-----------------|
+| **Advanced Analytics** | • Machine learning integration<br>• Automated stress classification<br>• Yield prediction models<br>• Climate data integration |
+| **Visualization** | • Interactive time series plots<br>• 3D terrain visualization<br>• Mobile-friendly interfaces<br>• Real-time monitoring dashboards |
+| **Data Integration** | • Weather data integration<br>• Soil test correlation<br>• Yield data incorporation<br>• IoT sensor data fusion |
+| **Analysis Tools** | • Batch processing capabilities<br>• Custom index builder<br>• Automated report generation<br>• Statistical analysis package |
 
 ### Community Contributions
-We welcome contributions in the following areas:
-- New index implementations
-- Analysis tool development
-- Documentation improvements
-- Use case examples
-- Validation studies
-- Integration with other platforms
+| Area | Details |
+|------|----------|
+| **Development** | • New index implementations<br>• Analysis tool development<br>• Documentation improvements |
+| **Validation** | • Use case examples<br>• Validation studies<br>• Integration with other platforms |
 
 ## Requirements
 

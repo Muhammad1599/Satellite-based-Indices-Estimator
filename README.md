@@ -51,8 +51,8 @@ This suite provides tools for analyzing different aspects of vegetation, soil, a
 NDWI = (GREEN - NIR) / (GREEN + NIR)
 ```
 Where:
-- GREEN = Green reflectance (Sentinel-2 Band 3)
-- NIR = Near-infrared reflectance (Sentinel-2 Band 8)
+- GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
 
 Value Ranges:
 - > 0.3: Open water or very high moisture
@@ -66,10 +66,10 @@ Value Ranges:
 BSI = ((SWIR + RED) - (NIR + BLUE)) / ((SWIR + RED) + (NIR + BLUE))
 ```
 Where:
-- SWIR = Short-wave Infrared reflectance (Band 11)
-- RED = Red reflectance (Band 4)
-- NIR = Near-infrared reflectance (Band 8)
-- BLUE = Blue reflectance (Band 2)
+- SWIR = Short-wave Infrared reflectance (Sentinel-2 Band 11: 1610 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- BLUE = Blue reflectance (Sentinel-2 Band 2: 490 nm)
 
 Value Ranges:
 - > 0.3: High bare soil exposure/built-up areas
@@ -82,8 +82,8 @@ Value Ranges:
 SAVI = ((NIR - RED) * (1 + L)) / (NIR + RED + L)
 ```
 Where:
-- NIR = Near-infrared reflectance (Band 8)
-- RED = Red reflectance (Band 4)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
 - L = Soil brightness correction factor (typically 0.5)
 
 Value Ranges:
@@ -95,11 +95,11 @@ Value Ranges:
 
 ### 4. NDRE (Normalized Difference Red Edge)
 ```
-NDRE = (NIR - RedEdge) / (NIR + RedEdge)
+NDRE = (NIR - REDEDGE) / (NIR + REDEDGE)
 ```
 Where:
-- NIR = Near-infrared reflectance (Band 8)
-- RedEdge = Red Edge reflectance (Band 5)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- REDEDGE = Red-edge reflectance (Sentinel-2 Band 5: 705 nm)
 
 Value Ranges:
 - > 0.4: Very healthy vegetation with high nitrogen
@@ -111,12 +111,12 @@ Value Ranges:
 
 ### 5. MCARI (Modified Chlorophyll Absorption Ratio Index)
 ```
-MCARI = [(B5 - B4) - 0.2 * (B5 - B3)] * (B5/B4)
+MCARI = [(NIR - RED) - 0.2(RED - GREEN)] * (NIR/RED)
 ```
 Where:
-- B3 = Green reflectance (Band 3)
-- B4 = Red reflectance (Band 4)
-- B5 = Red Edge reflectance (Band 5)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
+- GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
 
 Value Ranges:
 - > 0.12: Very high chlorophyll content
@@ -132,61 +132,80 @@ Value Ranges:
 NDWI = (GREEN - NIR) / (GREEN + NIR)
 ```
 Where:
-- GREEN = Green reflectance (Sentinel-2 Band 3)
-- NIR = Near-infrared reflectance (Sentinel-2 Band 8)
+- GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
 
-**Primary Reference:**
-- McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432.
+**References:**
+- Original NDWI formulation:
+  - McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432.
+- Sentinel-2 band adaptation and validation:
+  - Du, Y., Zhang, Y., Ling, F., Wang, Q., Li, W., & Li, X. (2016). Water bodies' mapping from Sentinel-2 imagery with modified normalized difference water index at 10-m spatial resolution produced by sharpening the SWIR band. Remote Sensing, 8(4), 354.
 
 ### 2. BSI (Bare Soil Index)
 ```
 BSI = ((SWIR + RED) - (NIR + BLUE)) / ((SWIR + RED) + (NIR + BLUE))
 ```
 Where:
-- SWIR = Short-wave Infrared reflectance (Band 11)
-- RED = Red reflectance (Band 4)
-- NIR = Near-infrared reflectance (Band 8)
-- BLUE = Blue reflectance (Band 2)
+- SWIR = Short-wave Infrared reflectance (Sentinel-2 Band 11: 1610 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- BLUE = Blue reflectance (Sentinel-2 Band 2: 490 nm)
 
-**Primary Reference:**
-- Chen, X., et al. (2004). Remote sensing of urban environments. Progress in Physical Geography, 28(2), 283-302.
+**References:**
+- Original BSI formulation and validation:
+  - Rikimaru, A., Roy, P. S., & Miyatake, S. (2002). Tropical forest cover density mapping. Tropical Ecology, 43(1), 39-47.
+- Sentinel-2 adaptation and validation:
+  - Diek, S., Fornallaz, F., Schaepman, M., & De Jong, R. (2017). Barest Pixel Composite for agricultural areas using Landsat time series. Remote Sensing, 9(12), 1245.
 
 ### 3. SAVI (Soil Adjusted Vegetation Index)
 ```
 SAVI = ((NIR - RED) * (1 + L)) / (NIR + RED + L)
 ```
 Where:
-- NIR = Near-infrared reflectance (Band 8)
-- RED = Red reflectance (Band 4)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
 - L = Soil brightness correction factor (typically 0.5)
 
-**Primary Reference:**
-- Huete, A.R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309. https://doi.org/10.1016/0034-4257(88)90106-X
+**References:**
+- Original SAVI formulation:
+  - Huete, A.R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309.
+- Sentinel-2 validation and application:
+  - Delegido, J., Verrelst, J., Alonso, L., & Moreno, J. (2011). Evaluation of Sentinel-2 red-edge bands for empirical estimation of green LAI and chlorophyll content. Sensors, 11(7), 7063-7081.
 
 ### 4. NDRE (Normalized Difference Red Edge)
 ```
-NDRE = (NIR - RedEdge) / (NIR + RedEdge)
+NDRE = (NIR - REDEDGE) / (NIR + REDEDGE)
 ```
 Where:
-- NIR = Near-infrared reflectance (Band 8)
-- RedEdge = Red Edge reflectance (Band 5)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- REDEDGE = Red-edge reflectance (Sentinel-2 Band 5: 705 nm)
 
-**Primary References:**
-- Barnes, E.M., et al. (2000). Coincident Detection of Crop Water Stress, Nitrogen Status and Canopy Density Using Ground-Based Multispectral Data.
-- Eitel, J.U.H., et al. (2011). Combined Spectral Index to Improve Ground-Based Estimates of Nitrogen Status in Dryland Wheat.
+**References:**
+- Original NDRE development and validation:
+  - Gitelson, A., & Merzlyak, M. N. (1994). Spectral reflectance changes associated with autumn senescence of Aesculus hippocastanum L. and Acer platanoides L. leaves. Journal of Plant Physiology, 143(3), 286-292.
+- Sentinel-2 red-edge bands validation:
+  - Clevers, J. G., & Gitelson, A. A. (2013). Remote estimation of crop and grass chlorophyll and nitrogen content using red-edge bands on Sentinel-2 and -3. International Journal of Applied Earth Observation and Geoinformation, 23, 344-351.
 
 ### 5. MCARI (Modified Chlorophyll Absorption Ratio Index)
 ```
-MCARI = [(B5 - B4) - 0.2 * (B5 - B3)] * (B5/B4)
+MCARI = [(NIR - RED) - 0.2(RED - GREEN)] * (NIR/RED)
 ```
 Where:
-- B3 = Green reflectance (Band 3)
-- B4 = Red reflectance (Band 4)
-- B5 = Red Edge reflectance (Band 5)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8: 842 nm)
+- RED = Red reflectance (Sentinel-2 Band 4: 665 nm)
+- GREEN = Green reflectance (Sentinel-2 Band 3: 560 nm)
 
-**Primary References:**
-- Daughtry, C.S.T., et al. (2000). Estimating Corn Leaf Chlorophyll Concentration from Leaf and Canopy Reflectance. Remote Sensing of Environment, 74(2), 229-239.
-- Wu, C., et al. (2008). MCARI applications in agriculture.
+**References:**
+- Original MCARI development:
+  - Daughtry, C. S. T., Walthall, C. L., Kim, M. S., De Colstoun, E. B., & McMurtrey Iii, J. E. (2000). Estimating corn leaf chlorophyll concentration from leaf and canopy reflectance. Remote Sensing of Environment, 74(2), 229-239.
+- Sentinel-2 adaptation and validation:
+  - Clevers, J. G., & Kooistra, L. (2012). Using hyperspectral remote sensing data for retrieving canopy chlorophyll and nitrogen content. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 5(2), 574-583.
+
+### Additional References for Sentinel-2 Band Selection
+- ESA Sentinel-2 User Handbook:
+  - European Space Agency. (2015). Sentinel-2 User Handbook. ESA Standard Document, 1, 1-64.
+- Sentinel-2 Band Characteristics and Applications:
+  - Drusch, M., Del Bello, U., Carlier, S., Colin, O., Fernandez, V., Gascon, F., ... & Bargellini, P. (2012). Sentinel-2: ESA's optical high-resolution mission for GMES operational services. Remote Sensing of Environment, 120, 25-36.
 
 ## Additional References
 

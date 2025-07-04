@@ -125,6 +125,77 @@ Value Ranges:
 - 0.02-0.04: Low chlorophyll content
 - < 0.02: Very low chlorophyll or non-vegetated
 
+## Detailed Index Equations and References
+
+### 1. NDWI (Normalized Difference Water Index)
+```
+NDWI = (GREEN - NIR) / (GREEN + NIR)
+```
+Where:
+- GREEN = Green reflectance (Sentinel-2 Band 3)
+- NIR = Near-infrared reflectance (Sentinel-2 Band 8)
+
+**Primary Reference:**
+- McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432.
+
+### 2. BSI (Bare Soil Index)
+```
+BSI = ((SWIR + RED) - (NIR + BLUE)) / ((SWIR + RED) + (NIR + BLUE))
+```
+Where:
+- SWIR = Short-wave Infrared reflectance (Band 11)
+- RED = Red reflectance (Band 4)
+- NIR = Near-infrared reflectance (Band 8)
+- BLUE = Blue reflectance (Band 2)
+
+**Primary Reference:**
+- Chen, X., et al. (2004). Remote sensing of urban environments. Progress in Physical Geography, 28(2), 283-302.
+
+### 3. SAVI (Soil Adjusted Vegetation Index)
+```
+SAVI = ((NIR - RED) * (1 + L)) / (NIR + RED + L)
+```
+Where:
+- NIR = Near-infrared reflectance (Band 8)
+- RED = Red reflectance (Band 4)
+- L = Soil brightness correction factor (typically 0.5)
+
+**Primary Reference:**
+- Huete, A.R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309. https://doi.org/10.1016/0034-4257(88)90106-X
+
+### 4. NDRE (Normalized Difference Red Edge)
+```
+NDRE = (NIR - RedEdge) / (NIR + RedEdge)
+```
+Where:
+- NIR = Near-infrared reflectance (Band 8)
+- RedEdge = Red Edge reflectance (Band 5)
+
+**Primary References:**
+- Barnes, E.M., et al. (2000). Coincident Detection of Crop Water Stress, Nitrogen Status and Canopy Density Using Ground-Based Multispectral Data.
+- Eitel, J.U.H., et al. (2011). Combined Spectral Index to Improve Ground-Based Estimates of Nitrogen Status in Dryland Wheat.
+
+### 5. MCARI (Modified Chlorophyll Absorption Ratio Index)
+```
+MCARI = [(B5 - B4) - 0.2 * (B5 - B3)] * (B5/B4)
+```
+Where:
+- B3 = Green reflectance (Band 3)
+- B4 = Red reflectance (Band 4)
+- B5 = Red Edge reflectance (Band 5)
+
+**Primary References:**
+- Daughtry, C.S.T., et al. (2000). Estimating Corn Leaf Chlorophyll Concentration from Leaf and Canopy Reflectance. Remote Sensing of Environment, 74(2), 229-239.
+- Wu, C., et al. (2008). MCARI applications in agriculture.
+
+## Additional References
+
+1. Sentinel-2 MSI User Guide - European Space Agency
+2. Google Earth Engine Documentation
+3. Scientific papers on MCARI applications in agriculture
+4. Sentinel-2 User Handbook
+5. Google Earth Engine Documentation
+
 ## Requirements
 
 - Python 3.x
